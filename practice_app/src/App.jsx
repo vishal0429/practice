@@ -1,14 +1,19 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import { incrementCount } from "./store/slices/userSlice";
 
 function App() {
+  const count = useSelector((state) => state.user.value);
+  const displatch = useDispatch();
   const openRazorpay = () => {
     const options = {
-      key: "rzp_test_sOdMqCZYqVGA8E", 
-      amount: 1000, 
+      key: "rzp_test_sOdMqCZYqVGA8E",
+      amount: 1000,
       currency: "INR",
       name: "Vishal pvt ltd",
       description: "Test Transaction",
-      image: "https://static.vecteezy.com/system/resources/previews/002/002/403/non_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg", 
+      image:
+        "https://static.vecteezy.com/system/resources/previews/002/002/403/non_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg",
       handler: function (response) {
         alert(`✅ Payment successful: ${response.razorpay_payment_id}`);
       },
@@ -29,6 +34,10 @@ function App() {
     rzp.open();
   };
 
+  const handlePlus = () => {
+    displatch(incrementCount());
+  };
+
   return (
     <>
       <button
@@ -37,6 +46,8 @@ function App() {
       >
         Pay ₹100
       </button>
+      <p>{count}</p>
+      <button onClick={handlePlus}>+</button>
     </>
   );
 }
