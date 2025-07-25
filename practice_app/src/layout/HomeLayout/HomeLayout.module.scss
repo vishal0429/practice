@@ -1,0 +1,9 @@
+.homelayout{
+    display: flex;
+    .rightSide{
+        flex: 1;
+        .outlet{
+            padding: 8px;
+        }
+    }
+}

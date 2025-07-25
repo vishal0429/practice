@@ -1,0 +1,54 @@
+$primary-color: #3E5F44;
+
+.button {
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+
+.normal {
+  background-color: rgba($primary-color, 0.95);
+  color: #fff;
+
+  &:hover {
+    background-color: rgba($primary-color, 1);
+  }
+}
+
+.outline {
+  background-color: transparent;
+  border: 1.5px solid $primary-color;
+  color: $primary-color;
+
+  &:hover {
+    background-color: rgba(62, 95, 68, 0.1);
+  }
+}
+
+.text {
+  background-color: transparent;
+  color: $primary-color;
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: rgba(62, 95, 68, 0.1);
+  }
+}
+
+.lg {
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.md {
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+}
+
+.sm {
+  font-size: 0.875rem;
+  padding: 0.15rem 0.75rem;
+}
